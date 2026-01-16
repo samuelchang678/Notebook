@@ -1,0 +1,41 @@
+:root {
+  --note-bg-color: #A9A9A9;
+  // --text-color: #000000;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+  }
+}
+
+.notebookContainer {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr;
+  height: 100vh;
+}
+
+.panel {
+  border-right: 1px solid #ddd;
+  overflow: auto;
+  padding: 12px;
+}
+
+.noteContainer{
+  cursor: pointer;
+  margin: 8px,
+}
+
+.noteSelected {
+  background: "transparent";
+  color: "inherit";
+  border: "none";
+  outline: "none";
+  width: "100%";
+  padding: 0,
+}
+
+.noteUnselected {
+  background: transparent
+}

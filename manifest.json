@@ -1,0 +1,6 @@
+{
+  "name": "Notebook",
+  "short_name": "Notebook",
+  "description": "A simple web application that allows user to write and store notes",
+  "start_url": "/"
+}
