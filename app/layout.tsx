@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Notebook",
   description: "3 panel notebook webapp",
-  icons: { icon: '../public/file.svg' },
+  icons: { icon: '/notes.png' },
 };
 
 export default function RootLayout({

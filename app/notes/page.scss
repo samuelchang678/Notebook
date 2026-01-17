@@ -1,0 +1,56 @@
+:root {
+  --note-bg-color: #A9A9A9;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+  }
+}
+
+.notebookContainer {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr;
+  height: 100vh;
+}
+
+.panel {
+  border-right: 1px solid #ddd;
+  overflow: auto;
+  padding: 12px;
+}
+
+.noteContainer{
+  display: flex;
+  cursor: pointer;
+  margin: 8px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+
+.selectedNoteContainer{
+  display: flex;
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: rgb(0, 47, 128);
+  border-width: 1px;
+}
+
+.noteSelectedInput {
+  background: transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+}
+
+.noteUnselected {
+  background: transparent
+}
