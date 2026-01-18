@@ -55,6 +55,8 @@ The main challenge was the find the correct tech/library to use. The decision to
 
 There were many libraries to use and videos showing how to display markdown. But I found out that the most common one was react-markdown. Tried that, was alright but has to include some extra plugins for correct highlight color and blocks of code.  
 
+The other challenge worth mentioning was with tailwind (v4), it removes all browser default styles. So the markdown component did not work. Had to disabled the default css. 
+
 
 ## Prompting 
 When it comes to the using of AI. I used a chain of prompts instead of a single large prompt. I first ask a high level architecture approach and to give me a skeleton code. Then I clarified the framework I decided to used and constrains such as using typescript and sass. I also asked it about react-markdown library, how to implement it correctly and the problem with inline code. Then I ask chatgpt to check my code for syntax or improvements. 

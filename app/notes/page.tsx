@@ -138,6 +138,7 @@ export default function Home() {
       <div className="panel">
         {activeNote ? (
           <textarea
+            id="noteTextArea"
             placeholder="Start typing here"
             value={activeNote.content}
             onChange={(
@@ -154,34 +155,37 @@ export default function Home() {
         )}
       </div>
       {/* Panel 3: Markdown Preview */}
-      <div className="panel">
+      <div>
         {activeNote ? (
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
-            components={{
-              code(props) {
-                const { children, className, node, ...rest } = props
-                const match = /language-(\w+)/.exec(className || '')
-                return match ? (
-                  <SyntaxHighlighter
-                    {...rest}
-                    PreTag="div"
-                    // eslint-disable-next-line react/no-children-prop
-                    children={String(children).replace(/\n$/, '')}
-                    language={match[1]}
-                    style={dark}
-                  />
-                ) : (
-                  <code {...rest} className={className}>
-                    {children}
-                  </code>
-                )
-              }
-            }}
-          >
-            {activeNote.content}
-          </ReactMarkdown>
+          <div className="prose dark:prose-invert max-w-none">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
+              components={{
+                code(props) {
+                  const { children, className, node, ...rest } = props
+                  const match = /language-(\w+)/.exec(className || '')
+                  return match ? (
+                    <SyntaxHighlighter
+                      {...rest}
+                      PreTag="div"
+                      // eslint-disable-next-line react/no-children-prop
+                      children={String(children).replace(/\n$/, '')}
+                      language={match[1]}
+                      style={dark}
+                    />
+                  ) : (
+                    <code {...rest} className={className}>
+                      {children}
+                    </code>
+                  )
+                }
+              }}
+            >
+              {activeNote.content}
+            </ReactMarkdown>
+          </div>
+
         ) : (
           <p>Nothing to preview</p>
         )}
